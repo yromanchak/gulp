@@ -1,0 +1,14 @@
+.section-main {
+    @include respond-to(desktop) {
+        height: 100%;
+    }
+    @include respond-to(xl) {
+        margin-left: 50px;
+    }
+    @include respond-to(lg) {
+        margin-left: 20px;
+    }
+    @include respond-to(md) {
+        margin-left: 20px;
+    }
+}

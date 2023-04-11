@@ -1,0 +1,25 @@
+@mixin spriteBgUrl {
+    background: url("../images/sprite/sprite-93c9aab4.svg") no-repeat;
+}
+
+@mixin sprite-instruments {
+    @include spriteBgUrl;
+    background-position: 0 100%;
+    width: 65px;
+    height: 56px;
+}
+
+@mixin sprite-logo-footer {
+    @include spriteBgUrl;
+    background-position: 0 0;
+    width: 203px;
+    height: 29px;
+}
+
+@mixin sprite-radio-active {
+    @include spriteBgUrl;
+    background-position: 34.946236559139784% 42.028985507246375%;
+    width: 17px;
+    height: 16px;
+}
+

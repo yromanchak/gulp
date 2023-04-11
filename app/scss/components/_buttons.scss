@@ -1,0 +1,205 @@
+.btn {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+  z-index: 1;
+  flex-grow: 0;
+  flex-shrink: 0;
+
+  @include roboto;
+
+  user-select: none;
+  letter-spacing: 0.01em;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-feature-settings: "kern" 1;
+  -moz-font-feature-settings: "kern" 1;
+
+  font-size: $btn-md-font-size;
+  line-height: 22px;
+  font-weight: $btn-default-font-weight;
+  text-align: center;
+  text-shadow: none;
+  white-space: nowrap;
+  text-decoration: none !important;
+  padding: $btn-md-padding;
+  margin: 0;
+  box-shadow: $btn-default-box-shadow;
+  min-width: $btn-md-min-width;
+  background: $btn-default-background;
+  border: 1px solid $btn-default-border-color;
+  background-image: none !important;
+  border-radius: $btn-md-border-radius;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.1s linear !important;
+  height: $btn-md-height;
+  color: $white;
+
+  // Disabled comes first so active can properly restyle
+  &.disabled,
+  &:disabled {
+    border-color: $btn-disabled-border-color;
+    background: $btn-disabled-color;
+    box-shadow: none !important;
+    cursor: not-allowed !important;
+    pointer-events: none;
+
+    .ripple {
+      display: none !important;
+    }
+  }
+
+  // Opinionated: add "hand" cursor to non-disabled .btn elements
+  &:not(:disabled):not(.disabled) {
+    cursor: pointer;
+  }
+
+  //&:not(:disabled):not(.disabled).hover,
+  &:not(:disabled):not(.disabled):hover {
+    box-shadow: $btn-hover-box-shadow;
+    background: $btn-hover-background;
+    border-color: $btn-hover-border-color;
+    color: $white;
+  }
+
+  //&:not(:disabled):not(.disabled).-active,
+  &:not(:disabled):not(.disabled):active {
+    box-shadow: $btn-active-box-shadow;
+  }
+}
+
+.btn-secondary {
+  color: $btn-secondary-color !important;
+  border-color: $btn-secondary-color;
+  background: $white;
+  &:not(:disabled):not(.disabled):hover {
+    border-color: $orange-hover;
+    color: $orange-hover !important;
+    background: $white;
+  }
+  &.disabled,
+  &:disabled {
+    background: transparent !important;
+    border-color: $btn-disabled-border-color;
+    color: $btn-disabled-color !important;
+  }
+}
+
+/* ----------------------------------------------------------------------
+  Button Sizes
+------------------------------------------------------------------------- */
+.btn-sm {
+  @include btn-size($btn-sm-padding, $btn-sm-font-size, $btn-sm-min-width, $btn-sm-border-radius, $btn-sm-height);
+}
+
+.btn-md { // default btn
+  @include btn-size($btn-md-padding, $btn-md-font-size, $btn-md-min-width, $btn-md-border-radius, $btn-md-height);
+}
+
+.btn-lg {
+  @include btn-size($btn-lg-padding, $btn-lg-font-size, $btn-lg-min-width, $btn-lg-border-radius, $btn-lg-height);
+}
+
+/* ----------------------------------------------------------------------
+  btn-icon
+------------------------------------------------------------------------- */
+.btn-icon {
+  padding: 0 !important;
+  min-width: auto !important;
+
+  [class*="icon-"] {
+    position: relative !important;
+  }
+}
+
+/* ----------------------------------------------------------------------
+  icons
+------------------------------------------------------------------------- */
+
+@mixin btn-icon-styles($icon-size, $icon-indent, $inline-icon-margin-top) {
+  i[class*="icon-"] {
+    margin-top: $inline-icon-margin-top;
+  }
+  &[class*="btn-icon"] {
+    [class^="icon-"],
+    [class*=" icon-"] {
+      width: $icon-size;
+      height: $icon-size;
+    }
+  }
+  &.btn-icon-left {
+    padding-left: $icon-size;
+
+    &.btn-icon-border {
+      padding-left: $icon-size + $icon-indent;
+    }
+  }
+  &.btn-icon-right {
+    padding-right: $icon-size;
+
+    &.btn-icon-border {
+      padding-right: $icon-size + $icon-indent;
+    }
+  }
+}
+
+.btn-sm {
+  @include btn-icon-styles($btn-sm-icon-size, 15px, -3px);
+}
+
+.btn-md, .btn {
+  @include btn-icon-styles($btn-md-icon-size, 15px, -3px);
+}
+
+.btn-lg {
+  @include btn-icon-styles($btn-lg-icon-size, 15px, -3px);
+}
+
+/* ----------------------------------------------------------------------
+  Material Design Ripple Effect - by Ravikumar Chauhan
+------------------------------------------------------------------------- */
+
+.btn,
+.btn-ripple {
+  overflow: hidden;
+
+  .ripple {
+    display: block;
+    position: absolute;
+    border-radius: 100%;
+    background: rgba(0, 0, 0, 0.03);
+    transform: scale(0);
+    pointer-events: none;
+    z-index: 0;
+
+    &.animated {
+      animation: ripple 0.6s linear;
+    }
+  }
+}
+
+@include keyframes('ripple') {
+  100% {
+    opacity: 0;
+    transform: scale(2.5);
+  }
+}
+
+/* ----------------------------------------------------------------------
+  show-hide content in buttons
+------------------------------------------------------------------------- */
+.btn {
+  &:not(.-active) {
+    .-active {
+      display: none !important;
+    }
+  }
+
+  &.-active {
+    .-default {
+      display: none !important;
+    }
+  }
+}

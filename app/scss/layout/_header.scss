@@ -1,0 +1,67 @@
+.hdr {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  right: 0;
+  &_top {
+    @include gradient('180deg, #242424 0%, #323232 100%');
+    @include respond-to(mobile) {
+      display: none;
+    }
+  }
+  &_hamburger {
+    .hamburger {
+      width: 22px;
+      height: 22px;
+      display: block;
+      cursor: pointer;
+      position: relative;
+    }
+  }
+  &_lang {
+    display: flex;
+    justify-content: right;
+    a,
+    span {
+      height: 24px;
+      padding: 0 12px;
+      display: flex;
+      align-items: center;
+      border: 0.5px solid #262626;
+      border-right: none;
+    }
+    a {
+      @include text-style(normal, 400, 12px, 16px, #fff);
+      @include gradient('180deg, #6E6E6E 0%, #5A5A5A 100%');
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    span {
+      @include text-style(normal, 400, 12px, 16px, $dark-color);
+      background-color: #FF9006;
+      border-bottom: none;
+    }
+  }
+  &_main {
+    background-color: #FF9006;
+  }
+  .set-height {
+    @include respond-to(mobile) {
+      height: 48px;
+      display: flex;
+      align-items: center;
+    }
+  }
+  &_logo {
+    @include respond-to(mobile) {
+      margin-right: auto;
+    }
+    img {
+      @include respond-to(mobile) {
+        max-width: 76px;
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+html {
+  -webkit-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+}
+body {
+  font-family: Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+iframe, ul, ol {
+  margin-bottom: 20px;
+}
+
+.align-center {
+  text-align: center;
+}
+
+i {
+  font-style: normal;
+}
+
+.body-overlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.12);
+  z-index: 5000;
+}
+
+@include respond-to(mobile) {
+  .hide-on-mobile {
+    display: none!important;
+  }
+}
+@include respond-to(desktop) {
+  .hide-on-desktop {
+    display: none!important;
+  }
+}

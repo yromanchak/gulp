@@ -1,0 +1,247 @@
+.sidebar {
+  .wrapper-item {
+    border: 1px solid $gray-second;
+    border-radius: 5px;
+    padding: 24px 16px;
+    &:not(:last-child) {
+      margin-bottom: 48px;
+    }
+  }
+  h3 {
+    margin: 0;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    list-style: none;
+  }
+
+  .recent-news {
+    &_top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-decoration: none;
+      margin-bottom: 32px;
+      h3 {
+        @include text-style(normal, 600, 21px, 30px, $dark-color);
+      }
+      &-more {
+        @include text-style(normal, 500, 12px, 15px, $orange);
+        text-decoration: underline;
+        &:hover {
+          color: $orange-hover;
+        }
+        &:disabled,
+        &.disabled {
+          cursor: not-allowed;
+          pointer-events: none;
+          color: $disabled;
+        }
+      }
+    }
+    &_item {
+      &:not(:last-child) {
+        border-bottom: 1px solid $gray-second;
+        padding-bottom: 16px;
+        margin-bottom: 16px;
+      }
+      &-link {
+        display: block;
+        text-decoration: none;
+      }
+      &-date {
+        @include text-style(normal, 400, 11px, 150%, $gray-sub);
+      }
+      &-title {
+        @include text-style(normal, 500, 14px, 150%, $dark-color);
+      }
+    }
+  }
+
+  .guide-panel {
+    h3 {
+      @include text-style(normal, 600, 21px, 30px, $dark-color);
+      margin-bottom: 8px;
+    }
+    &_description {
+      @include text-style(normal, 400, 12px, 150%, $dark-color);
+      margin-bottom: 32px;
+    }
+    &_bottom {
+      @include respond-to(desktop) {
+        text-align: center;
+      }
+    }
+    .btn {
+      @include respond-to(mobile) {
+        min-width: 100%;
+      }
+    }
+  }
+
+  .find-manual {
+    h3 {
+      @include text-style(normal, 600, 21px, 30px, $dark-color);
+      margin-bottom: 14px;
+    }
+    &_bottom {
+      margin-top: 8px;
+    }
+    .dropdown {
+      min-width: 100%;
+    }
+    &_bottom {
+      @include respond-to(desktop) {
+        text-align: center;
+      }
+    }
+    .btn {
+      @include respond-to(mobile) {
+        min-width: 100%;
+      }
+    }
+  }
+
+  .subscribe {
+    h3 {
+      @include text-style(normal, 600, 21px, 30px, $dark-color);
+      margin-bottom: 26px;
+    }
+    &_bottom {
+      @include respond-to(desktop) {
+        text-align: center;
+      }
+    }
+    .btn {
+      @include respond-to(mobile) {
+        min-width: 100%;
+      }
+      .icon-mail {
+        position: relative;
+        padding-left: 24px;
+        &:before {
+          @include sprite;
+          @include sprite-center;
+          //@include sprite-mail;
+          right: auto;
+          top: -1px;
+        }
+      }
+    }
+    .fsb_btn {
+      span {
+        &:before {
+          content: none;
+        }
+      }
+    }
+  }
+
+  .social-buttons {
+    font-size: 0;
+    text-align: center;
+    margin-top: -32px;
+    margin-bottom: 48px;
+    a {
+      display: inline-block;
+      position: relative;
+      width: 44px;
+      height: 24px;
+      background: #404A51;
+      border: 1px solid #EDEDED;
+      border-radius: 4px;
+      transition: all 0.25s ease-in-out;
+      &:not(:last-child) {
+        margin-right: 6px;
+      }
+      &:hover {
+        background: $dark-color;
+      }
+      &.youtube,
+      &.facebook,
+      &.chat {
+        &:after {
+          @include sprite;
+          @include sprite-center;
+        }
+      }
+      &.youtube {
+        &:after {
+          //@include sprite-social-btn-youtube;
+        }
+      }
+      &.facebook {
+        &:after {
+          //@include sprite-social-btn-facebook;
+        }
+      }
+      &.chat {
+        &:after {
+          //@include sprite-social-btn-chat;
+        }
+      }
+    }
+  }
+
+  .gsm-offers {
+    &_title {
+      @include text-style(normal, 500, 21px, 150%, $dark-color);
+      margin-bottom: 17px;
+    }
+    &_item {
+      text-decoration: none;
+      display: flex;
+      &-wrap {
+        &:not(:last-child) {
+          border-bottom: 1px solid $gray-second;
+          padding-bottom: 16px;
+          margin-bottom: 16px;
+        }
+      }
+      &-image {
+        margin-right: 12px;
+      }
+      &-name {
+        @include text-style(normal, 500, 14px, 21px, $dark-color);
+        margin-bottom: 16px;
+        @include trim(2);
+        max-height: 42px;
+      }
+    }
+    .btn-cart {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 124px;
+      height: 20px;
+      background: #9AAE3A;
+      border-radius: 2px;
+      text-decoration: none;
+      transition: all 0.25s ease-in-out;
+      @include text-style(normal, 700, 8px, 12px, $white);
+      &:hover {
+        background: #879E15;
+      }
+      &.disabled,
+      &:disabled {
+        background: $btn-disabled-color;
+        cursor: not-allowed !important;
+        pointer-events: none;
+      }
+      .icon-shopping-cart {
+        position: relative;
+        padding-left: 20px;
+        &:before {
+          @include sprite;
+          @include sprite-center;
+          //@include sprite-shopping-cart;
+          right: auto;
+          top: -1px;
+        }
+      }
+    }
+  }
+}

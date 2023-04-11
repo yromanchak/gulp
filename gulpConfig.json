@@ -1,0 +1,42 @@
+{
+  "config": {
+    "path": {
+      "app":  "app/",
+      "dist": "dist/"
+    },
+    "src": {
+      "html": "app/**/*.html",
+      "styles": "app/scss/style.scss",
+      "scripts": [
+        "app/js/swiper.min.js",
+        "app/js/select.js",
+        "app/js/main.js"
+      ],
+      "images": [
+        "app/images/**/*.{jpg,png,svg,gif,ico,webp}",
+        "!app/images/sprite/**"
+      ],
+      "sprite": "app/images/sprite/*.svg",
+      "fonts":  "app/fonts/**/*.{eot,woff,woff2,ttf}"
+    },
+    "watch": {
+      "html": "app/**/*.html",
+      "styles": "app/scss/**/*.scss",
+      "scripts": "app/js/**/*.js",
+      "images": [
+        "app/images/**/*.{jpg,png,svg,gif,ico,webp}",
+        "!app/images/sprite/**"
+      ],
+      "sprite": "app/images/sprite/*.svg",
+      "fonts": "app/fonts/**/*.{eot,woff,woff2,ttf}"
+    },
+    "dist": {
+      "html":    "dist/",
+      "styles":  "dist/css/",
+      "scripts": "dist/js/",
+      "images":  "dist/images/",
+      "sprite":  "dist/images/sprite/",
+      "fonts":   "dist/fonts/"
+    }
+  }
+}

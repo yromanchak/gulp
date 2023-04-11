@@ -1,0 +1,220 @@
+.mm {
+  @include respond-to(desktop) {
+    display: none;
+  }
+  @include respond-to(mobile) {
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    overflow: hidden;
+    padding-bottom: 48px;
+    background-color: #F1F2F3;
+    position: fixed;
+    left: -100%;
+    top: 48px;
+    display: block;
+    transition: 300ms;
+
+    &.-is-visible {
+      left: 0;
+      overflow: auto;
+    }
+    &_content {
+      position: relative;
+    }
+  }
+}
+.footer {
+  padding: 20px 15px;
+  font-size: 12px;
+  line-height: 16px;
+  color: #656C72;
+  text-align: center;
+}
+.hdr {
+  &.-mm-open {
+    .body-overlay {
+      top: 48px;
+      z-index: 999;
+      background-color: rgba(33, 39, 44, 0.3);
+    }
+  }
+}
+.mobile-menu {
+  @include respond-to(desktop) {
+    display: none;
+  }
+}
+#main-menu-wrapper {
+  display: none;
+}
+nav {
+  &.-is-hover {
+    .nav-first {
+      position: relative;
+      z-index: 5050;
+    }
+  }
+  .body-overlay {
+    top: 130px;
+  }
+  @include respond-to(mobile) {
+    display: none;
+  }
+  display: inline-block;
+  > ul {
+    margin: 0;
+    padding: 0;
+  }
+  ul {
+    list-style: none;
+    ul {
+      display: none;
+      padding: 0;
+      position: absolute;
+      top: 33px;
+    }
+    li {
+      &:hover {
+        > ul {
+          display: block;
+        }
+      }
+      a {
+        display: block;
+        text-decoration: none;
+        line-height: 20px;
+      }
+      &.-arrow {
+        padding-right: 25px;
+        &:after {
+          position: absolute;
+          content: "";
+          top: 0;
+          bottom: 0;
+          right: 5px;
+          margin: auto;
+          width: 18px;
+          height: 18px;
+          background: url('/images/icon-arrow-1-right.svg') no-repeat;
+        }
+        &:hover {
+          &:after {
+            background: url('/images/icon-arrow-2-right.svg') no-repeat;
+          }
+        }
+      }
+    }
+  }
+  .nav {
+    &-first {
+      display: flex;
+      > li {
+        margin-left: -1px;
+        position: relative;
+        background: linear-gradient(180deg, #ECECEC 0%, #ECECEC 0.01%, #C0C0C0 100%);
+        border: 1px solid #B7B7B7;
+        &.-simple-item {
+          a > span {
+            padding-right: 0;
+            &:after {
+              content: none;
+            }
+          }
+        }
+        &.active {
+          background: #bdbdbd;
+        }
+        &.-important {
+          > a {
+            color: #ED8400;
+          }
+        }
+        &:hover {
+          background: linear-gradient(180deg, #DEDEDE 0%, #B0B0B0 100%);
+          border: 1px solid #A4A4A4;
+          &.-important {
+            color: #FF6600;
+            > a {
+              > span {
+                &:after {
+                  background: url('/images/nav-arrow-orange.svg') no-repeat;
+                  transform: rotate(180deg);
+                }
+              }
+            }
+          }
+          > a {
+            > span {
+              &:after {
+                background: url('/images/nav-arrow-on.svg') no-repeat;
+              }
+            }
+          }
+        }
+        > a {
+          height: 32px;
+          @include text-style(normal, 700, 14px, 14px, #656C72);
+          padding: 8px 19px;
+          min-width:120px;
+          text-align: center;
+          white-space: nowrap;
+          > span {
+            position: relative;
+            padding-right: 12px;
+            &:after {
+              position: absolute;
+              content: "";
+              top: 0;
+              bottom: 0;
+              right: 0;
+              margin: auto;
+              width: 7px;
+              height: 4px;
+              background: url('/images/nav-arrow.svg') no-repeat;
+            }
+          }
+        }
+      }
+    }
+    &-second {
+      width: fit-content;
+      min-width: 100%;
+      > li {
+        padding-right: 25px;
+        background: #FFFFFF;
+        border: 1px solid #F1F2F3;
+        position: relative;
+        &:not(:first-child) {
+          margin-top: -1px;
+        }
+        &:hover {
+          background: #F8F8F9;
+        }
+        a {
+          color: #1C2730;
+          padding: 8px;
+          white-space: nowrap;
+        }
+      }
+    }
+    &-third {
+      margin-top: -1px;
+      position: absolute;
+      left: 100%;
+      top:0;
+      width: 100%;
+      > li {
+        padding-right: 25px;
+        background: #F8F8F9;
+        border: 1px solid #F1F2F3;
+        &:not(:first-child) {
+          margin-top: -1px;
+        }
+        &:hover {
+          background: #F1F2F3;
+        }
+      }
+    }
+  }
+}

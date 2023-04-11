@@ -1,0 +1,170 @@
+@mixin clearfix() {
+  &:after, &:before {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin respond-to($media) {
+  @if $media == mobile {
+    @media only screen and (max-width: 959px) {
+      @content;
+    }
+  }
+  @if $media == desktop {
+    @media only screen and (min-width: 960px) {
+      @content;
+    }
+  }
+
+  @if $media == xs {
+    @media only screen and (max-width: 639px) {
+      @content;
+    }
+  }
+  @if $media == sm {
+    @media only screen and (min-width: 640px) and (max-width: 959px) {
+      @content;
+    }
+  }
+  @if $media == md {
+    @media only screen and (min-width: 960px) and (max-width: 1279px) {
+      @content;
+    }
+  }
+  @if $media == lg {
+    @media only screen and (min-width: 1280px) and (max-width: 1579px) {
+      @content;
+    }
+  }
+
+  @if $media == xl {
+    @media only screen and (min-width: 1580px) {
+      @content;
+    }
+  }
+
+  @if $media == lg-xl {
+    @media only screen and (min-width: 1280px) {
+      @content;
+    }
+  }
+}
+
+@mixin trim($numLines: null) {
+  @if $numLines != null {
+    display:-webkit-box;
+    -webkit-line-clamp:$numLines;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+  }
+  @else {
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    overflow:hidden;
+    display:block;
+  }
+}
+
+//Cross browser opacity
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+// =========================================
+// box shadow
+@mixin box-shadow($shadow) {
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  box-shadow: $shadow;
+}
+
+@mixin gradient($value){
+  @if type_of($value) == 'string' {
+    background: -webkit-linear-gradient(#{$value});
+    background: -moz-linear-gradient(#{$value});
+    background: -ms-linear-gradient(#{$value});
+    background: -o-linear-gradient(#{$value});
+    background: linear-gradient(#{$value});
+  }
+  @else {
+    @error "Invalid parameter. Mixin expects a gradient as value.";
+  }
+}
+
+@mixin roboto() {
+  font-family: 'Roboto', sans-serif;
+}
+
+@mixin openSans() {
+  font-family: 'Open Sans', sans-serif;
+}
+
+@mixin text-style($style, $weight, $size, $line-height, $color) {
+  font: {
+    size: $size;
+    style: $style;
+    weight: $weight;
+  }
+  line-height: $line-height;
+  color: $color;
+}
+
+// =========================================
+//Animations and keyframes
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }
+  @-ms-keyframes #{$animation-name} {
+    @content;
+  }
+  @-o-keyframes #{$animation-name} {
+    @content;
+  }
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};
+}
+
+@mixin btn-size($padding, $font-size, $min-width, $border-radius, $height) {
+  padding: $padding;
+  font-size: $font-size;
+  min-width: $min-width;
+  border-radius: $border-radius;
+  height: $height;
+}
+
+@mixin customScrollbar {
+  &::-webkit-scrollbar {
+    width: 14px;
+    background: #fff
+  }
+  &::-webkit-scrollbar:hover {
+    background: #f2f2f2
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #cdcdcd;
+    border: 2px solid transparent;
+    background-clip: content-box
+  }
+  &::-webkit-scrollbar-button {
+    display: none
+  }
+}
