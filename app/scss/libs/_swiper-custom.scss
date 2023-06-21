@@ -1,0 +1,92 @@
+.swiper-pagination {
+  left: 0;
+  right: 0;
+  bottom: 8px;
+  &-bullet {
+    width: 12px;
+    height: 12px;
+    opacity: 1;
+    margin-right: 10px;
+    outline: none;
+    background: $gray-sub;
+    &:last-child {
+      margin: 0;
+    }
+    &-active {
+      background: $orange-brand;
+    }
+    &:only-child {
+      display: none;
+    }
+  }
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  display: block;
+  background: transparent;
+  width: 30px;
+  height: 62px;
+  top: 0;
+  bottom: 1px;
+  margin: auto;
+  outline: none;
+  i {
+    position: relative;
+    display: block;
+    width: 30px;
+    height: 62px;
+    background: transparent;
+    transition: all 200ms linear;
+    &:after {
+      @include sprite;
+      @include sprite-center;
+    }
+  }
+  &:hover {
+    i {
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      border-radius: 2px;
+    }
+  }
+}
+
+.swiper-button-next {
+  right: -15px;
+  i {
+    &:after {
+      @include sprite-slide-right;
+    }
+    &:hover {
+      &:after {
+        @include sprite-slide-right-on;
+      }
+    }
+  }
+}
+.swiper-button-prev {
+  left: -15px;
+  i {
+    &:after {
+      @include sprite-slide-left;
+    }
+    &:hover {
+      &:after {
+        @include sprite-slide-left-on;
+      }
+    }
+  }
+}
+.swiper-button-disabled {
+  display: none;
+}
+
+@include respond-to(desktop) {
+  .swiper-pagination {
+    &-bullet {
+      width: 12px;
+      height: 12px;
+      margin-right: 17px;
+    }
+  }
+}

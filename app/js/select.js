@@ -1,16 +1,18 @@
-function initSelect(elem) {
+function initSelect(elem, optionValueAttr) {
   let select = elem.querySelector('.dropdown.select');
   let selectValue = elem.querySelector('.dropdown.select .value');
   let selectOptions = elem.querySelectorAll('.dropdown-menu li');
+  let timerLeave = null;
 
   selectOptions.forEach(function (currentElement) {
-    currentElement.addEventListener('click', function () {
-      selectValue.innerText = currentElement.textContent;
+    currentElement.addEventListener('click', function (e) {
+      selectValue.innerText = optionValueAttr ? currentElement.getAttribute('value') : currentElement.textContent;
       select.classList.remove('-open');
+
       if (select.classList.contains('-error')) select.classList.remove('-error');
 
-      const brandId = currentElement.getAttribute('value');
-      selectValue.setAttribute('value', brandId);
+      const optionValue = currentElement.getAttribute('value');
+      selectValue.setAttribute('value', optionValue);
     })
   })
 
@@ -23,6 +25,15 @@ function initSelect(elem) {
       select.classList.remove('-open');
     }
   })
+
+  select.onmouseenter = () => {
+    clearTimeout(timerLeave);
+  }
+  select.onmouseleave = () => {
+    timerLeave = setTimeout(() => {
+      select.classList.remove('-open');
+    }, 500);
+  }
 }
 
 function generateUrl() {
@@ -81,10 +92,14 @@ function loadDataSet() {
 
 const selectBrand = document.querySelector('[name="brand_id"]');
 const selectPhone = document.querySelector('[name="phone_id"]');
-const selectButton = document.querySelector('.find-manual .btn');
+const selectButton = document.querySelector('[name="button-form"]');
 
-selectButton.addEventListener('click', generateUrl);
+if (typeof(selectBrand) != 'undefined' && selectBrand != null) initSelect(selectBrand);
+if (typeof(selectPhone) != 'undefined' && selectPhone != null) initSelect(selectPhone);
+if (typeof(selectButton) != 'undefined' && selectButton != null) selectButton.addEventListener('click', generateUrl)
+
 window.addEventListener('load', loadDataSet);
 
-initSelect(selectBrand);
-initSelect(selectPhone);
+const selectLang = document.querySelector('[name="language-switcher"]');
+if (typeof(selectLang) != 'undefined' && selectLang != null) initSelect(selectLang, true);
+

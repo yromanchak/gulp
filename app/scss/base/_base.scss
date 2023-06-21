@@ -4,10 +4,59 @@ html {
 }
 body {
   font-family: Roboto, "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+  background-color: $white;
+  text-align: left;
+  @include text-style(normal, 400, 14px, 1.2, $dark-color);
 }
 
-iframe, ul, ol {
-  margin-bottom: 20px;
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+a {
+  color: $link-brand-color;
+}
+
+h1,h2,h3,h4 {
+  margin-bottom: 16px;
+}
+h2,h3,h4 {
+  @include respond-to(lg-xl) {
+    margin-top: 56px;
+  }
+  @include respond-to(xs-sm-md) {
+    margin-top: 40px;
+  }
+}
+h1 {
+  margin-top: 0;
+}
+
+h1 {
+  @include text-style(normal, 600, 28px, 36px, $dark-color);
+}
+h2 {
+  @include text-style(normal, 600, 24px, 32px, $dark-color);
+}
+h3 {
+  @include text-style(normal, 600, 21px, 30px, $dark-color);
+}
+h4 {
+  @include text-style(normal, 600, 16px, 20px, $dark-color);
+}
+p {
+  @include text-style(normal, 400, 16px, 24px, $dark-sub);
+  margin: 12px 0;
+}
+img {
+  border-style: none;
+  outline: none;
+}
+
+ul, li {
+  padding: 0;
+  margin: 0;
 }
 
 .align-center {
@@ -28,6 +77,11 @@ i {
   left: 0;
   background-color: rgba(0, 0, 0, 0.12);
   z-index: 5000;
+}
+
+.up-over-overlay {
+  position: relative;
+  z-index: 5050;
 }
 
 @include respond-to(mobile) {

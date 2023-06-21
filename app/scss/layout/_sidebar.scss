@@ -29,7 +29,7 @@
         @include text-style(normal, 600, 21px, 30px, $dark-color);
       }
       &-more {
-        @include text-style(normal, 500, 12px, 15px, $orange);
+        @include text-style(normal, 500, 12px, 15px, $orange-brand);
         text-decoration: underline;
         &:hover {
           color: $orange-hover;
@@ -203,6 +203,7 @@
       }
       &-image {
         margin-right: 12px;
+        flex: 0 0 80px;
       }
       &-name {
         @include text-style(normal, 500, 14px, 21px, $dark-color);
@@ -210,18 +211,22 @@
         @include trim(2);
         max-height: 42px;
       }
+      &-right {
+        flex-grow: 1;
+      }
     }
     .btn-cart {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 124px;
-      height: 20px;
+      max-width: 160px;
+      width: 100%;
+      padding: 6px 0 4px;
       background: #9AAE3A;
-      border-radius: 2px;
+      border-radius: 3px;
       text-decoration: none;
       transition: all 0.25s ease-in-out;
-      @include text-style(normal, 700, 8px, 12px, $white);
+      @include text-style(normal, 500, 12px, 18px, $white);
       &:hover {
         background: #879E15;
       }
@@ -233,13 +238,12 @@
       }
       .icon-shopping-cart {
         position: relative;
-        padding-left: 20px;
+        padding-left: 24px;
         &:before {
           @include sprite;
           @include sprite-center;
           //@include sprite-shopping-cart;
           right: auto;
-          top: -1px;
         }
       }
     }

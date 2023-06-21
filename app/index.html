@@ -6,44 +6,319 @@
   <meta name="description" content="gulp">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/style.min.css">
 </head>
 <body>
 
-<div class="wrapper-item find-manual">
-  <div class="find-manual_form">
-    <div name="brand_id">
-      <div class="dropdown select">
-        <div class="value">Select a brand</div>
-        <div class="error-text">No results found</div>
-        <div class="dropdown-wrap">
-          <ul class="dropdown-menu">
-            <li value="1">Alcatel</li>
-            <li value="13">Blu</li>
-            <li value="4">Huawei</li>
-            <li value="7">Lenovo</li>
-          </ul>
+<div class="carplay-landing">
+  <header class="header">
+    <div class="container">
+      <div class="row set-height">
+        <div class="col-12 d-flex align-items-center">
+          <div class="header_logo-wrap">
+            <div class="header_logo">
+              <img src="https://placehold.co/180x47" alt="logo">
+            </div>
+          </div>
+
+          <nav class="hide-on-mobile">
+            <a href="#carplay">item1</a>
+            <a href="#function">item2</a>
+            <a href="#price">item3</a>
+            <a href="#contacts">item4</a>
+          </nav>
+
+          <div class="header_hamburger hide-on-desktop">
+            <div class="hamburger hamburger--elastic">
+              <div class="hamburger-box">
+                <div class="hamburger-inner"></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div name="phone_id">
-      <div class="dropdown select">
-        <div class="value">Select a model</div>
-        <div class="error-text">No results found</div>
-        <div class="dropdown-wrap">
-          <ul class="dropdown-menu">
-            <li value="3096">A110</li>
-            <li value="3094">A120</li>
-            <li value="3098">A30</li>
-            <li value="3184">A300</li>
-          </ul>
-        </div>
+  </header>
+
+  <div class="mobile-menu mm hide-on-desktop">
+    <nav class="mm_nav">
+      <a href="#carplay">item1</a>
+      <a href="#function">item2</a>
+      <a href="#price">item3</a>
+      <a href="#contacts">item4</a>
+    </nav>
+    <footer class="mm_footer">
+      <div class="title">Зв'яжіться з нами</div>
+      <div class="phones">
+        <a href="tel:063 33 333 33">063 33 333 33</a>
       </div>
-    </div>
-    <div class="find-manual_bottom">
-      <div class="btn btn-secondary btn-lg">Select</div>
-    </div>
+      <div class="social">
+        <a href="#0" class="facebook" target="_blank"></a>
+        <a href="#0" class="telegram" target="_blank"></a>
+        <a href="#0" class="instagram" target="_blank"></a>
+        <a href="#0" class="viber" target="_blank"></a>
+      </div>
+    </footer>
   </div>
+
+  <main class="main">
+    <section class="main-banner" id="carplay">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-7">
+            <h1>Lorem Ipsum</h1>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            <div class="btn">What is Lorem Ipsum?</div>
+            <div class="mobile-banner hide-on-desktop">
+              <img src="https://placehold.co/959x634" alt="logo">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="info-text -bg-gray">
+      <div class="container">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+      </div>
+    </section>
+
+    <section class="carplay-functions" id="function">
+      <div class="container">
+        <h2>What is Lorem Ipsum?</h2>
+        <div class="swiper-container slider-init">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="carplay-functions_content">
+                <div class="carplay-functions_img">
+                  <img src="https://placehold.co/380x276" alt="">
+                </div>
+                <div class="carplay-functions_title">
+                  Lorem Ipsum
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="carplay-functions_content">
+                <div class="carplay-functions_img">
+                  <img src="https://placehold.co/380x276" alt="">
+                </div>
+                <div class="carplay-functions_title">
+                  Lorem Ipsum
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="carplay-functions_content">
+                <div class="carplay-functions_img">
+                  <img src="https://placehold.co/380x276" alt="">
+                </div>
+                <div class="carplay-functions_title">
+                  Lorem Ipsum
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="carplay-functions_content">
+                <div class="carplay-functions_img">
+                  <img src="https://placehold.co/380x276" alt="">
+                </div>
+                <div class="carplay-functions_title">
+                  Lorem Ipsum
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="carplay-functions_content">
+                <div class="carplay-functions_img">
+                  <img src="https://placehold.co/380x276" alt="">
+                </div>
+                <div class="carplay-functions_title">
+                  Lorem Ipsum
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="carplay-control -bg-gray">
+      <div class="container">
+        <h2>What is Lorem Ipsum?</h2>
+        <div class="carplay-control_wrapper">
+          <div class="carplay-control_item">
+            <div class="carplay-control_img">
+              <img src="https://placehold.co/124x124" alt="">
+            </div>
+            <div class="carplay-control_text">
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            </div>
+          </div>
+          <div class="carplay-control_item">
+            <div class="carplay-control_img">
+              <img src="https://placehold.co/124x124" alt="">
+            </div>
+            <div class="carplay-control_text">
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            </div>
+          </div>
+          <div class="carplay-control_item">
+            <div class="carplay-control_img">
+              <img src="https://placehold.co/124x124" alt="">
+            </div>
+            <div class="carplay-control_text">
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            </div>
+          </div>
+          <div class="carplay-control_item">
+            <div class="carplay-control_img">
+              <img src="https://placehold.co/124x124" alt="">
+            </div>
+            <div class="carplay-control_text">
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="carplay-brands" id="price">
+      <h2>Lorem Ipsum</h2>
+      <div class="container">
+        <div class="carplay-brands_wrapper">
+          <div class="carplay-brands_item">
+            <img src="https://placehold.co/120x120" alt="">
+          </div>
+          <div class="carplay-brands_item">
+            <img src="https://placehold.co/120x120" alt="">
+          </div>
+          <div class="carplay-brands_item">
+            <img src="https://placehold.co/120x120" alt="">
+          </div>
+          <div class="carplay-brands_item">
+            <img src="https://placehold.co/120x120" alt="">
+          </div>
+          <div class="carplay-brands_item">
+            <img src="https://placehold.co/120x120" alt="">
+          </div>
+          <div class="carplay-brands_item">
+            <img src="https://placehold.co/120x120" alt="">
+          </div>
+          <div class="carplay-brands_item">
+            <img src="https://placehold.co/120x120" alt="">
+          </div>
+          <div class="carplay-brands_item">
+            <img src="https://placehold.co/120x120" alt="">
+          </div>
+          <div class="carplay-brands_item">
+            <img src="https://placehold.co/120x120" alt="">
+          </div>
+          <div class="carplay-brands_item -brand-other">
+            <div class="brand-other_wrap">
+              <img src="https://placehold.co/32x32" alt="">
+              + 40 Lorem
+            </div>
+          </div>
+        </div>
+        <div class="carplay-brands_info-text">
+          Lorem Ipsum is simply dummy text <br>
+          Lorem Ipsum is simply dummy text <br><br>
+
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+        </div>
+        <div class="btn">What is Lorem Ipsum?</div>
+      </div>
+    </section>
+
+    <section class="carplay-why -bg-gray">
+      <div class="container">
+        <h2>What is Lorem Ipsum?</h2>
+        <div class="carplay-why_wrapper">
+          <div class="carplay-why_col">
+            <div class="carplay-why_item">
+              <img src="https://placehold.co/56x56" alt="">
+              <div class="carplay-why_item-title">Досвід</div>
+              <div class="carplay-why_item-description">Апгрейдимо мультимедійні системи авто з 2008 року.</div>
+            </div>
+          </div>
+          <div class="carplay-why_col">
+            <div class="carplay-why_item">
+              <img src="https://placehold.co/56x56" alt="">
+              <div class="carplay-why_item-title">Якість</div>
+              <div class="carplay-why_item-description">Замовляємо напряму у перевірених виробників.</div>
+            </div>
+          </div>
+          <div class="carplay-why_col">
+            <div class="carplay-why_item">
+              <img src="https://placehold.co/56x56" alt="">
+              <div class="carplay-why_item-title">Монтаж</div>
+              <div class="carplay-why_item-description">Монтуємо обладнання під ключ більш ніж в 40 містах України.</div>
+            </div>
+          </div>
+          <div class="carplay-why_col">
+            <div class="carplay-why_item">
+              <img src="https://placehold.co/56x56" alt="">
+              <div class="carplay-why_item-title">Сервіс та гарантія</div>
+              <div class="carplay-why_item-description">Консультуємо після монтажу та надаємо гарантію на обладнання.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="carplay-video">
+      <div class="container">
+        <h2>Lorem Ipsum</h2>
+
+        <iframe width="560" height="515" src="https://www.youtube.com/embed/dgLhyiw8xKA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <section class="carplay-google-maps" id="contacts">
+      <div class="container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1990.3304654823603!2d30.446414894042675!3d50.438407066294296!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cea08a803d6d%3A0xb996fc89ecdff24c!2z0JDQstGC0L7QtdC70LXQutGC0YDQvtC90ZbQutCwIENhciBTb2x1dGlvbnM!5e0!3m2!1suk!2sua!4v1685515148559!5m2!1suk!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="notification warning icon-warning"><strong>Увага:</strong> Інсталяційний центр працює за попереднім записом.</div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer_main-bg">
+        <div class="container">
+          <div class="footer_main">
+            <div class="footer_logo">
+              <img src="https://placehold.co/164x43" alt="">
+            </div>
+
+            <nav class="hide-on-mobile">
+              <a href="#carplay">item1</a>
+              <a href="#function">item2</a>
+              <a href="#price">item3</a>
+              <a href="#contacts">item4</a>
+            </nav>
+          </div>
+          <div class="footer_main-second">
+            <div class="social">
+              <a href="#0" class="facebook" target="_blank"></a>
+              <a href="#0" class="telegram" target="_blank"></a>
+              <a href="#0" class="instagram" target="_blank"></a>
+              <a href="#0" class="viber" target="_blank"></a>
+            </div>
+            <a href="tel:063 33 333 33" class="phone">063 33 333 33</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer_bottom-bg">
+        <div class="container">
+          <div class="footer_bottom">
+            &copy 2023 COMPANY. All rights reserved.
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
 </div>
 
 <script type="text/javascript" src="./js/main.min.js"></script>

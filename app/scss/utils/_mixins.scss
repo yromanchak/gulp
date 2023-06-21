@@ -1,11 +1,19 @@
-@mixin clearfix() {
-  &:after, &:before {
-    content: " ";
-    display: table;
+@mixin roboto() {
+  font-family: 'Roboto', sans-serif;
+}
+
+@mixin openSans() {
+  font-family: 'Open Sans', sans-serif;
+}
+
+@mixin text-style($style, $weight, $size, $line-height, $color) {
+  font: {
+    size: $size;
+    style: $style;
+    weight: $weight;
   }
-  &:after {
-    clear: both;
-  }
+  line-height: $line-height;
+  color: $color;
 }
 
 @mixin respond-to($media) {
@@ -52,6 +60,18 @@
       @content;
     }
   }
+
+  @if $media == sm-md-lg-xl {
+    @media only screen and (min-width: 640px) {
+      @content;
+    }
+  }
+
+  @if $media == xs-sm-md {
+    @media only screen and (max-width: 1279px) {
+      @content;
+    }
+  }
 }
 
 @mixin trim($numLines: null) {
@@ -69,15 +89,12 @@
   }
 }
 
-//Cross browser opacity
 @mixin opacity($opacity) {
   opacity: $opacity;
   $opacity-ie: $opacity * 100;
   filter: alpha(opacity=$opacity-ie); //IE8
 }
 
-// =========================================
-// box shadow
 @mixin box-shadow($shadow) {
   -webkit-box-shadow: $shadow;
   -moz-box-shadow: $shadow;
@@ -95,24 +112,6 @@
   @else {
     @error "Invalid parameter. Mixin expects a gradient as value.";
   }
-}
-
-@mixin roboto() {
-  font-family: 'Roboto', sans-serif;
-}
-
-@mixin openSans() {
-  font-family: 'Open Sans', sans-serif;
-}
-
-@mixin text-style($style, $weight, $size, $line-height, $color) {
-  font: {
-    size: $size;
-    style: $style;
-    weight: $weight;
-  }
-  line-height: $line-height;
-  color: $color;
 }
 
 // =========================================
@@ -166,5 +165,15 @@
   }
   &::-webkit-scrollbar-button {
     display: none
+  }
+}
+
+@mixin clearfix() {
+  &:after, &:before {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
   }
 }

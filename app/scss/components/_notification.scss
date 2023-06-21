@@ -1,0 +1,130 @@
+// ===== notification =====
+@mixin -notification-size-properties($size) {
+  @if $size == md { // default
+    padding:     12px 10px;
+    margin:      0 0 20px 0;
+    font-size:   12px;
+    line-height: 16px;
+  }
+  @if $size == sm {
+    padding:     6px 8px;
+    margin:      0 0 10px 0;
+    font-size:   11px;
+    line-height: 14px;
+  }
+}
+@mixin -notification-type-properties($type) {
+  @if $type == default { // default
+    background: $white;
+    border-radius: 2px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+    color: $black;
+  }
+  @if $type == warning {
+    background: $warning-bg !important;
+    box-shadow: none;
+  }
+  @if $type == success {
+    background: $success-bg !important;
+    box-shadow: none;
+  }
+  @if $type == danger {
+    background: $danger-bg !important;
+    box-shadow: none;
+  }
+  @if $type == info {
+    background: $info-bg !important;
+    box-shadow: none;
+  }
+}
+@mixin -notification-with-icon($size) {
+  @if $size == md { // default
+    &[class^="icon-"],
+    &[class*=" icon-"] {
+      padding-left: 35px!important;
+      &:after {
+        left: 10px;
+        top: 10px;
+      }
+    }
+  }
+  @if $size == sm {
+    &[class^="icon-"],
+    &[class*=" icon-"] {
+      padding-left: 29px!important;
+      &:after {
+        left: 6px;
+        top: 2px;
+      }
+    }
+  }
+}
+
+.notification {
+  display: block;
+  position: relative;
+  @include -notification-type-properties(default);
+  @include -notification-size-properties(md);
+  @include -notification-with-icon(md);
+  p {
+    margin-bottom: 10px!important;
+  }
+  ul {
+    margin-bottom: 15px!important;
+  }
+  & > *:only-child {
+    margin: 0!important;
+  }
+  & > *:first-child {
+    margin-top: 0!important;
+  }
+  & > *:last-child {
+    margin-bottom: 0!important;
+  }
+
+  &.warning {
+    @include -notification-type-properties(warning);
+  }
+  &.success {
+    @include -notification-type-properties(success);
+  }
+  &.danger {
+    @include -notification-type-properties(danger);
+  }
+  &.info {
+    @include -notification-type-properties(info);
+  }
+  &[class^="icon-"],
+  &[class*=" icon-"] {
+   &:after {
+     @include sprite;
+     left: 10px;
+     top: 10px;
+   }
+  }
+  &.icon-warning {
+    &:after {
+      @include sprite-icon-warning;
+    }
+  }
+  &.icon-success {
+    &:after {
+      @include sprite-icon-success;
+    }
+  }
+  &.icon-danger {
+    &:after {
+      @include sprite-icon-danger;
+    }
+  }
+  &.icon-info {
+    &:after {
+      @include sprite-icon-info;
+    }
+  }
+
+  &.size-sm {
+    @include -notification-size-properties(sm);
+    @include -notification-with-icon(sm);
+  }
+}

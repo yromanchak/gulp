@@ -2,19 +2,34 @@
 // ================ MASTER COLORS ===============
 
 $dark-color:          #1C2730 !default;
+$dark-sub:            #333333 !default;
+
+$gray:                #666666 !default;
+$gray-sub:            #737373 !default;
+$gray-second:         #D9D9D9 !default;
+$gray-light:          #F5F5F5 !default;
 
 $white:               #ffffff !default;
-$black:               $dark-color !default;
-$gray:                #666666 !default;
-$gray-second:         #D9D9D9 !default;
-$gray-sub:            #737373 !default;
 $red:                 #FC4545 !default;
-$orange:              #FF812D !default;
+
+$orange-brand:        #FF812D !default;
+$orange-light:        #FFF2E1 !default;
 $orange-hover:        #FF6600 !default;
-$disabled:            rgba(105, 105, 105, 0.5) !default;
+
+$black:               $dark-color !default;
 
 $text-main-color:     $black !default;
 $text-second-color:   $gray !default;
+
+$disabled:            rgba(105, 105, 105, 0.5) !default;
+
+$danger-bg:           #FFE5E5 !default;
+$warning-bg:          $orange-light !default;
+$success-bg:          #E6FCE3 !default;
+$info-bg:             #EBF5FF !default;
+
+$link-color:          #2392FD !default;
+$link-brand-color:    $orange-brand !default;
 
 
 // ==============================================

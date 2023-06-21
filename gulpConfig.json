@@ -8,7 +8,9 @@
       "html": "app/**/*.html",
       "styles": "app/scss/style.scss",
       "scripts": [
-        "app/js/swiper.min.js",
+        "app/js/jquery-3.6.4.min.js",
+        "app/js/swiper.js",
+        "app/js/changeVersion.js",
         "app/js/select.js",
         "app/js/main.js"
       ],

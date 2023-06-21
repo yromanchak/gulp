@@ -1,10 +1,108 @@
 @mixin spriteBgUrl {
-    background: url("../images/sprite/sprite-93c9aab4.svg") no-repeat;
+    background: url("../images/sprite/sprite-66de739f.svg") no-repeat;
+}
+
+@mixin sprite-chats {
+    @include spriteBgUrl;
+    background-position: 0 46.03174603174603%;
+    width: 88px;
+    height: 88px;
+}
+
+@mixin sprite-icon-arrow-1-right {
+    @include spriteBgUrl;
+    background-position: 10.27027027027027% 87.96992481203007%;
+    width: 18px;
+    height: 18px;
+}
+
+@mixin sprite-icon-arrow-2-right {
+    @include spriteBgUrl;
+    background-position: 20% 87.96992481203007%;
+    width: 18px;
+    height: 18px;
+}
+
+@mixin sprite-icon-close {
+    @include spriteBgUrl;
+    background-position: 29.72972972972973% 87.96992481203007%;
+    width: 18px;
+    height: 18px;
+}
+
+@mixin sprite-icon-danger {
+    @include spriteBgUrl;
+    background-position: 39.45945945945946% 87.96992481203007%;
+    width: 18px;
+    height: 18px;
+}
+
+@mixin sprite-icon-facebook {
+    @include spriteBgUrl;
+    background-position: 85.47486033519553% 22.834645669291337%;
+    width: 24px;
+    height: 24px;
+}
+
+@mixin sprite-icon-facebook-hover {
+    @include spriteBgUrl;
+    background-position: 98.88268156424581% 22.834645669291337%;
+    width: 24px;
+    height: 24px;
+}
+
+@mixin sprite-icon-info {
+    @include spriteBgUrl;
+    background-position: 49.189189189189186% 87.96992481203007%;
+    width: 18px;
+    height: 18px;
+}
+
+@mixin sprite-icon-message {
+    @include spriteBgUrl;
+    background-position: 85.47486033519553% 41.732283464566926%;
+    width: 24px;
+    height: 24px;
+}
+
+@mixin sprite-icon-message-hover {
+    @include spriteBgUrl;
+    background-position: 98.88268156424581% 41.732283464566926%;
+    width: 24px;
+    height: 24px;
+}
+
+@mixin sprite-icon-success {
+    @include spriteBgUrl;
+    background-position: 0 87.96992481203007%;
+    width: 19px;
+    height: 18px;
+}
+
+@mixin sprite-icon-warning {
+    @include spriteBgUrl;
+    background-position: 58.91891891891892% 87.96992481203007%;
+    width: 18px;
+    height: 18px;
+}
+
+@mixin sprite-icon-youtube {
+    @include spriteBgUrl;
+    background-position: 49.16201117318436% 66.92913385826772%;
+    width: 24px;
+    height: 24px;
+}
+
+@mixin sprite-icon-youtube-hover {
+    @include spriteBgUrl;
+    background-position: 62.56983240223464% 66.92913385826772%;
+    width: 24px;
+    height: 24px;
 }
 
 @mixin sprite-instruments {
     @include spriteBgUrl;
-    background-position: 0 100%;
+    background-position: 63.768115942028984% 30.526315789473685%;
     width: 65px;
     height: 56px;
 }
@@ -16,10 +114,73 @@
     height: 29px;
 }
 
+@mixin sprite-mail {
+    @include spriteBgUrl;
+    background-position: 18.181818181818183% 100%;
+    width: 16px;
+    height: 16px;
+}
+
 @mixin sprite-radio-active {
     @include spriteBgUrl;
-    background-position: 34.946236559139784% 42.028985507246375%;
+    background-position: 0 100%;
     width: 17px;
     height: 16px;
+}
+
+@mixin sprite-shopping-cart {
+    @include spriteBgUrl;
+    background-position: 9.13978494623656% 100%;
+    width: 17px;
+    height: 16px;
+}
+
+@mixin sprite-slide-left {
+    @include spriteBgUrl;
+    background-position: 68.64864864864865% 87.96992481203007%;
+    width: 18px;
+    height: 18px;
+}
+
+@mixin sprite-slide-left-on {
+    @include spriteBgUrl;
+    background-position: 78.37837837837837% 87.96992481203007%;
+    width: 18px;
+    height: 18px;
+}
+
+@mixin sprite-slide-right {
+    @include spriteBgUrl;
+    background-position: 88.10810810810811% 87.96992481203007%;
+    width: 18px;
+    height: 18px;
+}
+
+@mixin sprite-slide-right-on {
+    @include spriteBgUrl;
+    background-position: 97.83783783783784% 87.96992481203007%;
+    width: 18px;
+    height: 18px;
+}
+
+@mixin sprite-social-btn-chat {
+    @include spriteBgUrl;
+    background-position: 83.9572192513369% 62.043795620437955%;
+    width: 16px;
+    height: 14px;
+}
+
+@mixin sprite-social-btn-facebook {
+    @include spriteBgUrl;
+    background-position: 89.17525773195877% 62.043795620437955%;
+    width: 9px;
+    height: 14px;
+}
+
+@mixin sprite-social-btn-youtube {
+    @include spriteBgUrl;
+    background-position: 74.72527472527473% 62.043795620437955%;
+    width: 21px;
+    height: 14px;
 }
 
