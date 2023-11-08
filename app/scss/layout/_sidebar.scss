@@ -1,5 +1,5 @@
 .sidebar {
-  .wrapper-item {
+  .wrapper-item:not(.google-search) {
     border: 1px solid $gray-second;
     border-radius: 5px;
     padding: 24px 16px;
@@ -25,15 +25,20 @@
       align-items: center;
       text-decoration: none;
       margin-bottom: 32px;
+      &:hover {
+        .recent-news {
+          &_top-more {
+            text-decoration: underline;
+            color: $brand-hover;
+          }
+        }
+      }
       h3 {
         @include text-style(normal, 600, 21px, 30px, $dark-color);
       }
       &-more {
-        @include text-style(normal, 500, 12px, 15px, $orange-brand);
-        text-decoration: underline;
-        &:hover {
-          color: $orange-hover;
-        }
+        @include text-style(normal, 500, 12px, 15px, $brand);
+        white-space: nowrap;
         &:disabled,
         &.disabled {
           cursor: not-allowed;
@@ -57,50 +62,58 @@
       }
       &-title {
         @include text-style(normal, 500, 14px, 150%, $dark-color);
+        max-height: 42px;
+        @include trim(2);
       }
     }
   }
 
-  .guide-panel {
-    h3 {
-      @include text-style(normal, 600, 21px, 30px, $dark-color);
-      margin-bottom: 8px;
-    }
-    &_description {
-      @include text-style(normal, 400, 12px, 150%, $dark-color);
+  .testimonials {
+    &_top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-decoration: none;
       margin-bottom: 32px;
-    }
-    &_bottom {
-      @include respond-to(desktop) {
-        text-align: center;
+      &:hover {
+        .testimonials {
+          &_top-more {
+            text-decoration: underline;
+            color: $brand-hover;
+          }
+        }
+      }
+      h3 {
+        @include text-style(normal, 600, 21px, 30px, $dark-color);
+      }
+      &-more {
+        @include text-style(normal, 500, 12px, 15px, $brand);
+        white-space: nowrap;
+        &:disabled,
+        &.disabled {
+          cursor: not-allowed;
+          pointer-events: none;
+          color: $disabled;
+        }
       }
     }
-    .btn {
-      @include respond-to(mobile) {
-        min-width: 100%;
+    &_item {
+      &:not(:last-child) {
+        border-bottom: 1px solid $gray-second;
+        padding-bottom: 16px;
+        margin-bottom: 16px;
       }
-    }
-  }
-
-  .find-manual {
-    h3 {
-      @include text-style(normal, 600, 21px, 30px, $dark-color);
-      margin-bottom: 14px;
-    }
-    &_bottom {
-      margin-top: 8px;
-    }
-    .dropdown {
-      min-width: 100%;
-    }
-    &_bottom {
-      @include respond-to(desktop) {
-        text-align: center;
+      &-link {
+        display: block;
+        text-decoration: none;
       }
-    }
-    .btn {
-      @include respond-to(mobile) {
-        min-width: 100%;
+      &-comment {
+        @include text-style(normal, 500, 14px, 150%, $dark-sub);
+        max-height: 42px;
+        @include trim(2);
+      }
+      &-author {
+        @include text-style(normal, 400, 11px, 150%, $gray);
       }
     }
   }
@@ -116,6 +129,9 @@
       }
     }
     .btn {
+      @include respond-to(desktop) {
+        min-width: 218px;
+      }
       @include respond-to(mobile) {
         min-width: 100%;
       }
@@ -125,13 +141,13 @@
         &:before {
           @include sprite;
           @include sprite-center;
-          //@include sprite-mail;
+          @include sprite-mail;
           right: auto;
           top: -1px;
         }
       }
     }
-    .fsb_btn {
+    .sbp {
       span {
         &:before {
           content: none;
@@ -170,17 +186,17 @@
       }
       &.youtube {
         &:after {
-          //@include sprite-social-btn-youtube;
+          @include sprite-social-btn-youtube;
         }
       }
       &.facebook {
         &:after {
-          //@include sprite-social-btn-facebook;
+          @include sprite-social-btn-facebook;
         }
       }
       &.chat {
         &:after {
-          //@include sprite-social-btn-chat;
+          @include sprite-social-btn-chat;
         }
       }
     }
@@ -242,10 +258,45 @@
         &:before {
           @include sprite;
           @include sprite-center;
-          //@include sprite-shopping-cart;
+          @include sprite-shopping-cart;
           right: auto;
         }
       }
     }
+  }
+}
+
+
+.gsc-search-box-tools .gsc-search-box .gsc-input {
+  //padding-right: 12px!important;
+}
+table.gsc-search-box td.gsc-input {
+  padding-right: 0!important;
+}
+.gssb_c {
+  @include respond-to(desktop) {
+    width: 343px!important;
+    top: 225px!important;
+  }
+  margin-left: -10px;
+  @include respond-to(mobile) {
+    margin-top: 6px;
+  }
+  .gssb_a {
+    padding: 9px 11px;
+  }
+  .gssb_a td {
+    white-space: normal;
+  }
+}
+
+@include respond-to(lg) {
+  .gssb_c {
+    width: 270px!important;
+  }
+}
+@include respond-to(md) {
+  .gssb_c {
+    width: 280px!important;
   }
 }

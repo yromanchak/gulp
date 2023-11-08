@@ -8,11 +8,11 @@
       "html": "app/**/*.html",
       "styles": "app/scss/style.scss",
       "scripts": [
-        "app/js/jquery-3.6.4.min.js",
-        "app/js/swiper.js",
-        "app/js/changeVersion.js",
+        "app/js/libs/jquery-3.6.4.min.js",
+        "app/js/libs/swiper.js",
+        "app/js/main.js",
         "app/js/select.js",
-        "app/js/main.js"
+        "app/js/home.js"
       ],
       "images": [
         "app/images/**/*.{jpg,png,svg,gif,ico,webp}",

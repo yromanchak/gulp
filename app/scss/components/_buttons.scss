@@ -35,7 +35,7 @@
   position: relative;
   transition: all 0.1s linear !important;
   height: $btn-md-height;
-  color: $white;
+  color: $white!important;
 
   // Disabled comes first so active can properly restyle
   &.disabled,
@@ -75,8 +75,8 @@
   border-color: $btn-secondary-color;
   background: $white;
   &:not(:disabled):not(.disabled):hover {
-    border-color: $orange-hover;
-    color: $orange-hover !important;
+    border-color: $brand-hover;
+    color: $brand-hover !important;
     background: $white;
   }
   &.disabled,

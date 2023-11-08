@@ -1,0 +1,51 @@
+.field-group {
+  margin-bottom: 20px;
+  min-height: 102px;
+  &.-focused {
+    .field-group_field {
+      border-color: $brand!important;
+    }
+  }
+  label {
+    display: inline-block;
+    padding-bottom: 5px;
+  }
+  label,
+  input {
+    @include text-style(normal, 400, 14px, 150%, $dark-sub);
+  }
+  &.-textarea {
+    min-height: 178px;
+  }
+  textarea {
+    resize: none;
+    transition: all 100ms ease-out;
+    overflow: hidden;
+    min-height: 120px!important;
+    outline: none;
+    border: none;
+    padding: 14px 12px;
+    width: 100%;
+    border-radius: 5px;
+  }
+  &_field {
+    transition: ease border-color 200ms;
+    border: 1px solid $gray-second;
+    border-radius: 5px;
+    &:hover {
+      border-color: $gray;
+    }
+    input {
+      padding: 13px 11px 12px 11px;
+      background: transparent;
+      display: block;
+      width: 100%;
+      border: none;
+      outline: none;
+      writing-mode: horizontal-tb;
+    }
+  }
+  .form-errors li {
+    color: $red;
+  }
+}

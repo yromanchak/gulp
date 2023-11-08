@@ -19,9 +19,9 @@
             max-height: 40px;
           }
         }
-        &_social-buttons {
-          margin-top: 0;
-        }
+      }
+      .social-buttons {
+        margin-top: 0;
       }
     }
   }
@@ -135,7 +135,7 @@
       }
     }
   }
-  &_social-buttons {
+  .social-buttons {
     display: flex;
     align-items: center;
     margin-top: 4px;
@@ -159,31 +159,31 @@
       }
       &.youtube {
         &:after {
-          //@include sprite-icon-youtube;
+          @include sprite-icon-youtube;
         }
         &:hover {
           &:after {
-            //@include sprite-icon-youtube-hover;
+            @include sprite-icon-youtube-hover;
           }
         }
       }
       &.facebook {
         &:after {
-          //@include sprite-icon-facebook;
+          @include sprite-icon-facebook;
         }
         &:hover {
           &:after {
-            //@include sprite-icon-facebook-hover;
+            @include sprite-icon-facebook-hover;
           }
         }
       }
       &.chat {
         &:after {
-          //@include sprite-icon-message;
+          @include sprite-icon-message;
         }
         &:hover {
           &:after {
-            //@include sprite-icon-message-hover;
+            @include sprite-icon-message-hover;
           }
         }
       }

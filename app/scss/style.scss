@@ -22,14 +22,20 @@
 @import "layout/navigation";
 @import "layout/sidebar";
 @import "layout/content";
+@import "layout/main";
 
 /* components */
 @import "components/buttons";
+@import "components/fields";
+@import "components/option-box";
+@import "components/scroll-top-button";
+@import "components/brand-loop-slider";
+@import "components/content-wrapper";
+@import "components/breadcrumbs";
 @import "components/menu-hamburger";
 @import "components/accordion";
 @import "components/select";
 @import "components/notification";
 
 /* pages */
-@import "pages/content-wrapper";
 @import "pages/landing";

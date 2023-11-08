@@ -1,0 +1,30 @@
+.page-wrapper {
+  padding-top: 174px;
+  @include respond-to(mobile) {
+    padding-top: 75px;
+  }
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  &.-landing {
+    @include respond-to(desktop) {
+      padding-top: 174px;
+    }
+    @include respond-to(mobile) {
+      padding-top: 68px;
+    }
+  }
+}
+.main,
+.landing-wrapper {
+  flex-grow: 1;
+}
+.landing-wrapper {
+  padding-bottom: 0;
+}
+.-mobile-reverse {
+  @include respond-to(mobile) {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}

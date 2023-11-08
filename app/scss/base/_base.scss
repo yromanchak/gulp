@@ -15,7 +15,17 @@ body {
 }
 
 a {
-  color: $link-brand-color;
+  color: $brand;
+  text-decoration: underline;
+  &:hover {
+    color: $brand-hover;
+    text-decoration: none;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
 }
 
 h1,h2,h3,h4 {
@@ -93,4 +103,36 @@ i {
   .hide-on-desktop {
     display: none!important;
   }
+}
+
+.hiddenDiv {
+  display: none;
+}
+
+.mb24 {
+  margin-bottom: 24px!important;
+}
+
+.mb48 {
+  margin-bottom: 48px!important;
+}
+
+.f18 {
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.clear {
+  clear: both;
+}
+table p {
+  padding-bottom: 0;
+}
+.collapse-table {
+  border: 0 none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }

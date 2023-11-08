@@ -1,0 +1,61 @@
+.popup {
+  &-subscribe {
+    &_agreement {
+      margin-bottom: 24px;
+      font-size: 14px;
+      line-height: 21px;
+      color: $dark-sub;
+      label {
+        cursor: pointer;
+        position: relative;
+        padding-left: 28px;
+        .required {
+          color: $red;
+        }
+        &:hover {
+          .option-box_icon {
+            &:after {
+              border-color: $gray-sub;
+            }
+          }
+        }
+        input[type=checkbox]:checked + .option-box_icon {
+          &:after {
+            border-color: $gray-sub;
+          }
+          &:before {
+            @include sprite;
+            @include sprite-center;
+            @include sprite-check-active;
+          }
+        }
+        span {
+          color: $link-color;
+          text-decoration: underline;
+          position: relative;
+          &:hover {
+            text-decoration: none;
+          }
+        }
+        .option-box_icon {
+          width: 20px;
+          height: 20px;
+          position: absolute;
+          left: 0;
+          top: -2px;
+          &:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: solid 1px $gray-second;
+            border-radius: 2px;
+          }
+        }
+      }
+      input[type=checkbox] {
+        display: none;
+      }
+    }
+  }
+}

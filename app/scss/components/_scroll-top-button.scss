@@ -1,0 +1,41 @@
+.scroll-top {
+  transition: opacity .5s, visibility .5s;
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  right: 65px;
+  bottom: 65px;
+  z-index: 10;
+  background: $white;
+  cursor: pointer;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  @include respond-to(mobile) {
+    height: 40px;
+    width: 40px;
+    right: 20px;
+    bottom: 20px;
+  }
+  &.-show {
+    opacity: 1;
+    visibility: visible;
+  }
+  &:after {
+    @include sprite;
+    @include sprite-center;
+    @include sprite-up-btn;
+  }
+
+  &:hover,
+  &:active {
+    &:after {
+      @include sprite-up-btn-on;
+    }
+  }
+
+  &:active {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+}

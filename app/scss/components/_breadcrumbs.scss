@@ -1,0 +1,46 @@
+.breadcrumbs {
+  @include respond-to(desktop) {
+    margin-bottom: 48px;
+  }
+  @include respond-to(mobile) {
+    margin-bottom: 24px;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  li, a {
+    font-size: 14px;
+    line-height: 22px;
+  }
+  li {
+    list-style: none;
+    display: inline-block;
+    position: relative;
+    &:not(.active) {
+      position: relative;
+      padding: 0 21px 0 0;
+      &:after {
+        content: '/';
+        width: 21px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: -2px;
+        margin: auto;
+        text-align: center;
+        color: $gray-sub;
+      }
+    }
+    &.active {
+      color: $gray-sub;
+    }
+  }
+  a {
+    color: $dark-sub;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

@@ -35,6 +35,12 @@ footer {
         @include text-style(normal, 700, 14px, 20px, $dark-color);
         display: inline-block;
         margin-bottom: 24px;
+        &.-important {
+          color: $brand;
+          &:hover {
+            color: $brand-hover;
+          }
+        }
       }
       &-list {
         a {
@@ -45,7 +51,7 @@ footer {
     &_copyright {
       @include text-style(normal, 400, 14px, 17px, $gray);
       text-align: center;
-      padding: 24px 0 27px;
+      padding: 24px 0 24px;
       border-top: 1px solid $gray-second;
     }
   }

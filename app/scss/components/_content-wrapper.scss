@@ -1,0 +1,216 @@
+.content-wrapper {
+  .full-img {
+    img {
+      max-width: 100%;
+    }
+  }
+  .iframe-container {
+    @include respond-to(lg-xl) {
+      margin: 56px 0;
+    }
+    @include respond-to(xs-sm-md) {
+      margin: 40px 0;
+    }
+    @include respond-to(xs-sm-md) {
+      overflow: hidden;
+      padding-top: 56.25%;
+      position: relative;
+      iframe {
+        border: 0;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+      }
+    }
+  }
+  hr {
+    @include respond-to(lg-xl) {
+      margin: 56px 0;
+    }
+    @include respond-to(xs-sm-md) {
+      margin: 40px 0;
+    }
+    overflow: visible;
+    position: relative;
+    border-color: transparent;
+    &:after {
+      content: '';
+      width: 100%;
+      height: 1px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      background-color: $gray-light;
+    }
+  }
+
+  > *:first-child {
+    margin-top: 0;
+  }
+
+  ul, ol {
+    padding-left: 25px;
+    width: 100%;
+    margin: 0 0 25px 0;
+    li {
+      margin-top: 8px;
+      @include text-style(normal, 400, 14px, 24px, $dark-sub);
+    }
+    ul, ol {
+      margin-bottom: 0;
+    }
+  }
+
+  .nested-list-counter {
+    > ul {
+      @include respond-to(xs) {
+        padding-left: 0;
+      }
+    }
+    ul {
+      list-style: none;
+      counter-reset: item;
+      li {
+        counter-increment: item;
+        &:before {
+          content: counters(item, ".") " - ";
+        }
+      }
+    }
+  }
+
+  .lightbox {
+    a {
+      display: inline-block;
+    }
+  }
+
+  table {
+    width: 100%;
+    margin: 0 0 20px 0;
+    border-collapse: collapse;
+
+    th, td {
+      font-size: 14px;
+      line-height: 22px;
+      color: $dark-sub;
+      padding: 16px 20px;
+      border: 1px solid $gray-light;
+      word-break: normal;
+      @include respond-to(mobile) {
+        padding: 8px 10px;
+      }
+    }
+
+    th {
+      background-color: $gray-light;
+      border-bottom: 1px solid $gray-second;
+      font-weight: 600;
+      &:not(:last-child) {
+        border-right: 1px solid $gray-second;
+      }
+    }
+
+    td {
+      background-color: $white;
+      &.col1 {
+        background-color: #f5f5f5;
+      }
+      li {
+        margin-top: 0;
+      }
+      ul {
+        margin: 5px 0;
+      }
+    }
+
+    &.specifications,
+    &.specification {
+      table-layout: fixed;
+      td {
+        &:first-child {
+          background-color: $gray-light;
+        }
+      }
+    }
+    &.first-col-bg {
+      td:first-child {
+        background-color: $gray-light;
+      }
+    }
+  }
+
+  .table-wrapper {
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 20px;
+    height: auto;
+    -webkit-overflow-scrolling: touch;
+    @include respond-to(desktop) {
+      margin: 0;
+    }
+    @include respond-to(mobile) {
+      margin: 0 0 40px;
+    }
+    table {
+      @include respond-to(desktop) {
+        min-width: 560px;
+      }
+      @include respond-to(mobile) {
+        min-width: 929px;
+      }
+    }
+    .mCustomScrollBox {
+      overflow: initial;
+    }
+    .mCSB_scrollTools.mCSB_scrollTools_horizontal {
+      bottom: -20px;
+      z-index: 10;
+    }
+    .mCSB_scrollTools_horizontal.scroll-view {
+      position: fixed;
+      bottom: 5px;
+      margin: 0 15px !important;
+    }
+    &.mCustomScrollbar {
+      touch-action: auto !important;
+      /*перебити, небуло скролу на Android(Chrome)*/
+    }
+    .mCSB_horizontal.mCSB_inside > .mCSB_container {
+      margin-bottom: 0 !important;
+    }
+  }
+
+  .mb24 {
+    margin-bottom: 24px!important;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  p[align="center"] {
+    img {
+      @include respond-to(lg-xl) {
+        margin-bottom: 44px;
+        margin-top: 44px;
+      }
+      @include respond-to(xs-sm-md) {
+        margin-bottom: 40px;
+        margin-top: 40px;
+      }
+    }
+  }
+  .align-center {
+    @include respond-to(lg-xl) {
+      margin-bottom: 56px;
+      margin-top: 56px;
+    }
+    @include respond-to(xs-sm-md) {
+      margin-bottom: 40px;
+      margin-top: 40px;
+    }
+  }
+}

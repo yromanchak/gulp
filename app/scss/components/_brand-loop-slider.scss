@@ -1,0 +1,52 @@
+.brand-loop-slider {
+  position: relative;
+  overflow: hidden;
+  margin-top: 16px;
+  height: 64px;
+  background-color: $gray-light;
+  display: flex;
+  align-items: center;
+  @include respond-to(mobile) {
+    margin: 0 -15px;
+  }
+  .loop-slider {
+    .inner {
+      display: flex;
+      width: fit-content;
+      animation-name: loop;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-direction: var(--direction);
+      animation-duration: var(--duration);
+    }
+  }
+  .logo-item {
+    display: flex;
+    align-items: center;
+    margin-right: 116px;
+    @include respond-to(md) {
+      margin-right: 80px;
+    }
+    @include respond-to(sm) {
+      margin-right: 80px;
+    }
+    @include respond-to(xs) {
+      margin-right: 40px;
+    }
+  }
+  .fade {
+    pointer-events: none;
+    background: linear-gradient(90deg, #F4F4F4, transparent 10%, transparent 90%, #F4F4F4);
+    position: absolute;
+    inset: 0;
+  }
+}
+
+@keyframes loop {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
